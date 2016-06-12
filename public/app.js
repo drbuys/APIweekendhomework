@@ -106,6 +106,9 @@ var addWeatherInfo = function(weather) {
 
     var data = weather.data.weather;
 
+    var local = document.getElementById( 'location' );
+    local.innerText = "2 Day Weather Synopsis for: " + weather.data.request[0].query;
+
     for(var day in data) {
 
         var date = document.createElement( 'li' );
