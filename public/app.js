@@ -52,8 +52,6 @@ var dataRequest = function(center, map) {
             var jsonString = request.responseText;
             var weather = JSON.parse( jsonString );
             console.log(weather);
-            console.log(weather.data.current_condition[0].FeelsLikeC);
-            console.log(weather.data.current_condition[0].weatherIconUrl[0].value);
             map.addInfoWindow( center, weather );
             addWeatherInfo(weather);
         }
@@ -74,38 +72,38 @@ var addWeatherInfo = function(weather) {
     ul2.removeChild(ul2.firstChild);
     }
 
-        var data = weather.data.weather;
+    var data = weather.data.weather;
 
-        for(var day in data) {
+    for(var day in data) {
 
-            var date = document.createElement( 'li' );
-            date.setAttribute( 'id', 'date' );
-            date.innerText = "Date: " + data[day].date;
+        var date = document.createElement( 'li' );
+        date.setAttribute( 'id', 'date' );
+        date.innerText = "Date: " + data[day].date;
 
-            var moon = document.createElement( 'li' );
-            moon.setAttribute( 'id', 'moon' );
-            moon.innerText = "Moon rise/set: " + data[day].astronomy[0].moonrise + ", " + data[day].astronomy[0].moonset;
+        var moon = document.createElement( 'li' );
+        moon.setAttribute( 'id', 'moon' );
+        moon.innerText = "Moon rise/set: " + data[day].astronomy[0].moonrise + ", " + data[day].astronomy[0].moonset;
 
-            var suns = document.createElement( 'li' );
-            suns.setAttribute( 'id', 'suns' );
-            suns.innerText = "Sun rise/set: " + data[day].astronomy[0].sunrise + ", " + data[day].astronomy[0].sunset;
+        var suns = document.createElement( 'li' );
+        suns.setAttribute( 'id', 'suns' );
+        suns.innerText = "Sun rise/set: " + data[day].astronomy[0].sunrise + ", " + data[day].astronomy[0].sunset;
 
-            var maxt = document.createElement( 'li' );
-            maxt.setAttribute( 'id', 'maxt' );
-            maxt.innerText = "MaxTemp: " + data[day].maxtempC + "C";
+        var maxt = document.createElement( 'li' );
+        maxt.setAttribute( 'id', 'maxt' );
+        maxt.innerText = "MaxTemp: " + data[day].maxtempC + "C";
 
-            var mint = document.createElement( 'li' );
-            mint.setAttribute( 'id', 'mint' );
-            mint.innerText = "MinTemp: " + data[day].mintempC + "C";
+        var mint = document.createElement( 'li' );
+        mint.setAttribute( 'id', 'mint' );
+        mint.innerText = "MinTemp: " + data[day].mintempC + "C";
 
-            var ul = document.getElementById('day' + day);
+        var ul = document.getElementById('day' + day);
 
-            ul.appendChild(date);
-            ul.appendChild(moon);
-            ul.appendChild(suns);
-            ul.appendChild(maxt);
-            ul.appendChild(mint);
-        }
+        ul.appendChild(date);
+        ul.appendChild(moon);
+        ul.appendChild(suns);
+        ul.appendChild(maxt);
+        ul.appendChild(mint);
+    }
 
 };
 

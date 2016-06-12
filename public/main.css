@@ -34,15 +34,19 @@ h1 {
 
 ul li {
       list-style-type: none;
+      text-align: left;
+      /*float: left;*/
       /*display: inline-block;*/
       /*padding: 50px;*/
 }
 
 ul {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     border: 2px solid black;
     border-radius: 6px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /*background-color: #8b3019;*/
+    /*float: left;*/
     opacity: 0.9;
 }

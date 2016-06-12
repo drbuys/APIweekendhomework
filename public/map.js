@@ -9,7 +9,7 @@ var Map = function(latLng, zoom) {
 
     this.addInfoWindow = function( latLng, weather) {
         var current = weather.data.current_condition[0];
-        var title = "Weather: " + current.weatherDesc[0].value + "Pressure: " + current.pressure + "mb\nCurrent temperature: " + current.temp_C + "C\nFeels like: " + current.FeelsLikeC + "C\nCloudcover: " + current.cloudcover + "%\nWind Speed: " + current.windspeedKmph + "Kmph\nWind Direction: " + current.winddir16Point;
+        var title = "Weather: " + current.weatherDesc[0].value + "<br>" + "Pressure: " + current.pressure + "mb" + "<br>" + "Current temperature: " + current.temp_C + "C" + "<br>" + "Feels like: " + current.FeelsLikeC + "C" + "<br>" + "Cloudcover: " + current.cloudcover + "%" + "<br>" + "Wind Speed: " + current.windspeedKmph + "Kmph" + "<br>" + "Wind Direction: " + current.winddir16Point;
         // var title = "Here";
         var infowindow = new google.maps.InfoWindow({
             content: title
