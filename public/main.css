@@ -1,0 +1,48 @@
+body {
+    color: darkgrey;
+    text-align: center;
+}
+
+/*placeholder for map*/
+#map {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    opacity: 0.9;
+    display: inline-block;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#info {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    opacity: 0.9;
+    display: inline-block;
+    overflow: scroll;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+h1 {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: fantasy;
+    font-size: 2em;
+    /*background: #1daee5;*/
+}
+
+ul li {
+      list-style-type: none;
+      /*display: inline-block;*/
+      /*padding: 50px;*/
+}
+
+ul {
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /*background-color: #8b3019;*/
+    opacity: 0.9;
+}
