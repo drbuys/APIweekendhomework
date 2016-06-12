@@ -52,11 +52,43 @@ var dataRequest = function(center, map) {
             var jsonString = request.responseText;
             var weather = JSON.parse( jsonString );
             console.log(weather);
+            var temps = getTemperature(weather);
+            var dates = getDate(weather);
+            // var time = getCountryNames(countries);
             map.addInfoWindow( center, weather );
             addWeatherInfo(weather);
+            new LineChart(temps, dates);
         }
     };
     request.send(null);
+};
+
+var getTemperature = function(weather) {
+    var data = weather.data.weather;
+    var day1 = data[0].hourly;
+    var day2 = data[1].hourly;
+    var temps = [];
+    for (var hour1 in day1) {
+        var blah1 = parseInt(day1[hour1].tempC);
+        temps.push(blah1);
+    }
+    for (var hour2 in day2) {
+        var blah2 = parseInt(day2[hour2].tempC);
+        temps.push(blah2);
+    }
+    console.log(temps);
+    return temps;
+};
+
+var getDate = function(weather) {
+    var data = weather.data.weather;
+    var day1 = data[0].date;
+    var day2 = data[1].date;
+    var dates = [];
+    dates.push(day1);
+    dates.push(day2);
+    console.log(dates);
+    return dates;
 };
 
 var addWeatherInfo = function(weather) {
